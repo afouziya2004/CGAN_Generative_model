@@ -13,6 +13,7 @@ def build_discriminator():
     x = layers.LeakyReLU(0.2)(x)
     x = layers.Dense(256)(x)
     x = layers.LeakyReLU(0.2)(x)
+    
     output = layers.Dense(1, activation='sigmoid')(x)
-
+    
     return tf.keras.Model([image, label], output)
